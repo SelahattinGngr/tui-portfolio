@@ -6,18 +6,13 @@ export interface CertificationItem {
 
 export const CERTIFICATIONS_CONSTANTS: readonly CertificationItem[] = [
   {
-    name: "AWS Solutions Architect — Professional",
-    issuer: "Amazon Web Services",
+    name: "42 Cursus Level 11 — Junior Developer",
+    issuer: "École 42 Kocaeli",
     date: "2025",
   },
   {
-    name: "Certified Kubernetes Administrator",
-    issuer: "CNCF",
-    date: "2024",
-  },
-  {
-    name: "Google Professional Data Engineer",
-    issuer: "Google Cloud",
-    date: "2022",
+    name: "Web Tasarımı ve Kodlama Derecesi",
+    issuer: "Anadolu Üniversitesi",
+    date: "2025",
   },
 ] as const;

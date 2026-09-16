@@ -5,22 +5,36 @@ export interface SkillCategory {
 
 export const SKILLS_CONSTANTS: readonly SkillCategory[] = [
   {
-    label: "LANGUAGES",
-    items: ["Go", "Python", "TypeScript", "Rust", "SQL", "Bash"],
+    label: "PROGRAMLAMA DİLLERİ",
+    items: ["Java", "C", "C++", "Kotlin", "Python", "SQL"],
   },
   {
-    label: "FRAMEWORKS",
-    items: ["gRPC", "FastAPI", "Django", "Temporal", "React", "dbt"],
-  },
-  {
-    label: "TOOLS",
+    label: "BACKEND & ALTYAPI",
     items: [
-      "Postgres",
-      "Kafka",
-      "Kubernetes",
-      "Terraform",
-      "ClickHouse",
-      "Grafana",
+      "Spring Boot",
+      "RESTful API",
+      "Mikroservis",
+      "WebSocket",
+      "JWT & RBAC",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "Nginx",
+      "Linux",
+    ],
+  },
+  {
+    label: "AI-AGENT, MOBİL & OYUN",
+    items: [
+      "Google Antigravity",
+      "Claude Code",
+      "Agentic Workflow",
+      "Jetpack Compose",
+      "Firebase",
+      "Steamworks / Game Dev",
+      "AdMob",
+      "Iyzico / Stripe",
     ],
   },
 ] as const;

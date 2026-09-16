@@ -1,20 +1,20 @@
 {
-  "name": "tui-portfolio",
+  "name": "selahattin-tui-portfolio",
   "type": "module",
   "version": "0.0.1",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FatihBARACKILIC/tui-portfolio/issues",
-    "email": "fatihb469@gmail.com"
+    "url": "https://github.com/SelahattinGngr/tui-portfolio/issues",
+    "email": "selahattin_gungor53@hotmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/FatihBARACKILIC/tui-portfolio.git"
+    "url": "https://github.com/SelahattinGngr/tui-portfolio.git"
   },
   "author": {
-    "name": "Fatih BARAÇKILIÇ",
-    "email": "fatihb469@gmail.com",
-    "url": "https://github.com/FatihBARACKILIC/tui-portfolio"
+    "name": "Selahattin Güngör",
+    "email": "selahattin_gungor53@hotmail.com",
+    "url": "https://selahattin.dev"
   },
   "scripts": {
     "dev": "astro dev",

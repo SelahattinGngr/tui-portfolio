@@ -1,10 +1,10 @@
 export const APP_CONSTANTS = {
-  APP_NAME: "TUI",
-  VERSION: "DEV_KERNEL v2.4.0",
-  ROLE: "Backend / Platform",
-  UPTIME: "5 yrs",
-  LOCATION: "Amsterdam · CET",
-  SHELL: "zsh · utf-8",
-  DEPLOY: "2026-09-15",
-  PROMPT_USER: "visitor@tui",
+  APP_NAME: "SELAHATTIN",
+  VERSION: "DEV_KERNEL v1.0.0",
+  ROLE: "Backend Developer · Ürün Geliştirici",
+  UPTIME: "4 yrs",
+  LOCATION: "Rize · TR (Remote)",
+  SHELL: "bash · utf-8",
+  DEPLOY: "2026-09-17",
+  PROMPT_USER: "visitor@selahattin.dev",
 } as const;

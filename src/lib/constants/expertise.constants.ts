@@ -5,19 +5,19 @@ export interface ExpertiseItem {
 
 export const EXPERTISE_CONSTANTS: readonly ExpertiseItem[] = [
   {
-    title: "Distributed systems",
-    body: "Event-driven services, queue semantics, and making retries boring.",
+    title: "Backend & Mikroservis Mimarisi",
+    body: "Spring Boot, RESTful API, WebSocket, JWT & RBAC yetkilendirme ve güvenli mikroservis haberleşmesi.",
   },
   {
-    title: "Data platforms",
-    body: "Streaming and batch pipelines, schema evolution, warehouse modelling.",
+    title: "Veri, Dağıtık Önbellek & DevOps",
+    body: "PostgreSQL, MySQL, Redis, Docker Compose ve Linux sunucu altyapısıyla yüksek eşzamanlı ve dayanıklı sistemler.",
   },
   {
-    title: "Developer tooling",
-    body: "Internal CLIs, CI ergonomics, and cutting build times in half.",
+    title: "AI-Agent ile Ürün Geliştirme",
+    body: "Google Antigravity ve Claude Code ile spec'ten production'a otonom iş akışları, prompt mimarisi ve solo ürün teslimi.",
   },
   {
-    title: "Reliability",
-    body: "SLOs that mean something, incident review, on-call people sleep through.",
+    title: "Mobil & Oyun Dağıtımı",
+    body: "Jetpack Compose ile Android geliştirme (Denetim Takip) ve Steam mağaza yayını (Çay Ocağı Simülasyonu).",
   },
 ] as const;

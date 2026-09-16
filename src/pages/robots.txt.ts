@@ -4,7 +4,7 @@ const sitemapLine = (site: URL | undefined): string => {
   if (site === undefined) {
     return "";
   }
-  const sitemapUrl = new URL("sitemap-index.xml", site);
+  const sitemapUrl = new URL("sitemap.xml", site);
   return `Sitemap: ${sitemapUrl.href}\n`;
 };
 

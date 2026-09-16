@@ -9,27 +9,26 @@ export const TIMELINE_CONSTANTS: readonly TimelineItem[] = [
     current: true,
     year: "2026",
     event:
-      "Leading the platform group at Meridian; eight engineers, one event bus.",
+      "Çay Ocağı Simülasyonu oyununu Steam'de yayınladım; Denetim Takip ile 5.500+ toplam indirmeye ulaştım.",
   },
   {
-    year: "2023",
-    event: "Joined Meridian Logistics as Staff Engineer.",
-  },
-  {
-    year: "2020",
+    year: "2025",
     event:
-      "Moved into fintech at Ledgerline, took ownership of the payments ledger.",
+      "Spring Boot, Docker ve Redis ile çok kiracılı e-ticaret backend altyapısını ve Iyzico/Stripe ödeme entegrasyonlarını geliştirdim.",
   },
   {
-    year: "2017",
-    event: "First full-time product engineering role at Kestrel Studio.",
+    year: "2024 — 2025",
+    event:
+      "Hepsijet bünyesinde Java Backend Developer (Stajyer) olarak mikroservis geliştirmelerinde rol aldım.",
   },
   {
-    year: "2014",
-    event: "Finished MSc at TU Delft, started contracting independently.",
+    year: "2024",
+    event:
+      "İliner Teknoloji'de freelance backend geliştirici olarak anti-cheat ve Spring Boot güvenli API katmanını geliştirdim.",
   },
   {
-    year: "2012",
-    event: "Graduated Boğaziçi, wrote a compiler I still think about.",
+    year: "2022 — 2025",
+    event:
+      "École 42 Kocaeli Cursus yoğun yazılım eğitimini Level 11 seviyesinde tamamladım.",
   },
 ] as const;

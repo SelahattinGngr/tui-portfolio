@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   // Replace before deploying: canonical, OG and sitemap URLs all derive from this.
   integrations: [react(), sitemap()],
-  site: "https://example.com",
+  site: "https://selahattin.dev",
   vite: {
     plugins: [tailwindcss()],
   },

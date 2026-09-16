@@ -6,18 +6,32 @@ export interface StackCategory {
 
 export const STACK_CONSTANTS: readonly StackCategory[] = [
   {
-    label: "DAILY DRIVER",
-    note: "in use this week",
-    items: ["Go", "Postgres", "Kafka", "Kubernetes", "Neovim", "Linear"],
+    label: "GÜNLÜK BACKEND SÜRÜCÜSÜ",
+    note: "çekirdek mühendislik altyapısı",
+    items: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Linux",
+      "Git",
+    ],
   },
   {
-    label: "CURRENTLY EXPLORING",
-    note: "learning in the open",
-    items: ["Rust", "TigerBeetle", "NATS", "Zig"],
+    label: "AI-AGENT & HIZLANDIRICILAR",
+    note: "mobil ve oyun geliştirme kaldıracı",
+    items: [
+      "Google Antigravity",
+      "Claude Code",
+      "Kotlin / Compose",
+      "Steamworks",
+      "Firebase",
+    ],
   },
   {
-    label: "KEEPING WARM",
-    note: "reach for when it fits",
-    items: ["Python", "TypeScript", "Terraform", "dbt"],
+    label: "SİSTEM PROGRAMLAMA & 42",
+    note: "düşük seviye mimari temelleri",
+    items: ["C", "C++", "WebSocket", "Nginx", "Python", "SQL"],
   },
 ] as const;

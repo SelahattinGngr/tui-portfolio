@@ -6,27 +6,22 @@ export interface BlogPost {
 
 export const BLOG_CONSTANTS: readonly BlogPost[] = [
   {
-    date: "2026-08-14",
-    title: "Retries are a distributed system",
+    date: "2026-08-25",
+    title:
+      "Backend Mühendisliğinden Steam'e: AI Agent'lar ile Oyun Geliştirmek",
     excerpt:
-      "A retry policy is an architectural decision. Treating it as a config value is how you get thundering herds at 3am.",
+      "Google Antigravity ve Claude Code kullanarak Çay Ocağı Simülasyonu oyununu solo geliştirme ve Steam mağaza yayını deneyimleri.",
   },
   {
-    date: "2026-06-02",
-    title: "The reconciliation job that ate our nights",
+    date: "2026-08-10",
+    title: "Bir Ürünü Fikirden 5.500+ Kullanıcıya Ulaştırmak",
     excerpt:
-      "How a 6-hour nightly batch became an 11-minute one, and which of the six rewrites actually mattered.",
+      "Denetim Takip uygulamasının mimari kararları, 4.800+ Android indirmesi, ASO stratejisi ve iOS yayını koordinasyon süreci.",
   },
   {
-    date: "2026-03-21",
-    title: "Schema migrations without the maintenance window",
+    date: "2026-05-18",
+    title: "Spring Boot ile Çok Kiracılı (Multi-Tenant) E-Ticaret Mimarisi",
     excerpt:
-      "Expand, backfill, contract. Plus the failure modes nobody writes on the diagram.",
-  },
-  {
-    date: "2025-11-09",
-    title: "On-call should be boring",
-    excerpt:
-      "Notes from cutting paging volume by 70% without hiding a single real problem.",
+      "JWT kimlik doğrulama, RBAC yetkilendirme ve Redis önbellekleme ile güvenli, ölçeklenebilir backend altyapısı.",
   },
 ] as const;

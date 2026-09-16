@@ -1,0 +1,21 @@
+# Apache Configuration for cPanel Hosting
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Rewrite sitemap.xml to sitemap-index.xml
+  RewriteRule ^sitemap\.xml$ sitemap-index.xml [L]
+
+  # Handle clean URLs and fallback
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# Custom 404 Page
+ErrorDocument 404 /404.html
+
+# Caching & Compression for Performance
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>

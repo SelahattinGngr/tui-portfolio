@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/portfolio/ui/Button";
 import { Field } from "@/components/portfolio/ui/Field";
 import { FadeUp } from "@/components/portfolio/ui/FadeUp";
@@ -16,6 +17,90 @@ type ContactViewProperties = {
   onSubmit: () => void;
 };
 
+interface Web3FormsResponse {
+  success?: boolean;
+  message?: string;
+}
+
+interface RateLimitRecord {
+  count: number;
+  timestamp: number;
+}
+
+const RATE_LIMIT_KEY = "selahattin_contact_limit";
+const MAX_SUBMISSIONS_PER_DAY = 2;
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+const parseRecord = (raw: string): RateLimitRecord | null => {
+  try {
+    return JSON.parse(raw) as RateLimitRecord;
+  } catch {
+    return null;
+  }
+};
+
+const isRateLimited = (): boolean => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+  const raw = localStorage.getItem(RATE_LIMIT_KEY);
+  if (raw === null) {
+    return false;
+  }
+  const record = parseRecord(raw);
+  if (record === null || Date.now() - record.timestamp > ONE_DAY_MS) {
+    localStorage.removeItem(RATE_LIMIT_KEY);
+    return false;
+  }
+  return record.count >= MAX_SUBMISSIONS_PER_DAY;
+};
+
+const incrementRateLimit = (): void => {
+  if (typeof window === "undefined") {
+    return;
+  }
+  const raw = localStorage.getItem(RATE_LIMIT_KEY);
+  const now = Date.now();
+  if (raw === null) {
+    localStorage.setItem(
+      RATE_LIMIT_KEY,
+      JSON.stringify({ count: 1, timestamp: now })
+    );
+    return;
+  }
+  const record = parseRecord(raw);
+  const isExpired = record === null || now - record.timestamp > ONE_DAY_MS;
+  const count = isExpired ? 1 : record.count + 1;
+  const timestamp = isExpired ? now : record.timestamp;
+  localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify({ count, timestamp }));
+};
+
+const sendWeb3FormsMessage = async (
+  name: string,
+  email: string,
+  message: string
+): Promise<Web3FormsResponse> => {
+  const payload: Record<string, string> = {
+    email,
+    message,
+    name,
+    subject: `Yeni İletişim Mesajı (${name}) — selahattin.dev`,
+    access_key: CONTACT_CONSTANTS.WEB3FORMS_ACCESS_KEY,
+    from_name: "selahattin.dev Portföy",
+  };
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  return (await response.json()) as Web3FormsResponse;
+};
+
 export const ContactView = ({
   sent,
   cName,
@@ -27,11 +112,55 @@ export const ContactView = ({
   onSubmit,
 }: ContactViewProperties) => {
   const { FIELDS, LABELS } = CONTACT_CONSTANTS;
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [botCheck, setBotCheck] = useState("");
 
-  const handleSubmit: SubmitEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmit: SubmitEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-    onSubmit();
+
+    if (botCheck.length > 0) {
+      onSubmit();
+      return;
+    }
+
+    if (isRateLimited()) {
+      setErrorMessage(
+        "Spam koruması: Günlük maksimum 2 mesaj gönderme limitine ulaştınız. Lütfen doğrudan e-posta gönderin."
+      );
+      return;
+    }
+
+    if (CONTACT_CONSTANTS.WEB3FORMS_ACCESS_KEY.length === 0) {
+      setErrorMessage(CONTACT_CONSTANTS.KEY_MISSING_MESSAGE);
+      return;
+    }
+
+    setSubmitting(true);
+    setErrorMessage(null);
+
+    let data: Web3FormsResponse;
+    try {
+      data = await sendWeb3FormsMessage(cName, cEmail, cMsg);
+    } catch {
+      setErrorMessage(CONTACT_CONSTANTS.ERROR_MESSAGE);
+      setSubmitting(false);
+      return;
+    }
+
+    setSubmitting(false);
+
+    if (data.success) {
+      incrementRateLimit();
+      onSubmit();
+    } else {
+      setErrorMessage(data.message ?? CONTACT_CONSTANTS.ERROR_MESSAGE);
+    }
   };
+
+  const mailtoFallback = `mailto:${FIELDS.MAIL.value}?subject=${encodeURIComponent(
+    `Portföy İletişim: ${cName}`
+  )}&body=${encodeURIComponent(cMsg)}`;
 
   return (
     <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-6.5">
@@ -42,6 +171,16 @@ export const ContactView = ({
           </div>
         ) : (
           <form className="flex flex-col gap-2.5" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="botcheck"
+              value={botCheck}
+              onChange={(event) => setBotCheck(event.target.value)}
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
             <label className="sr-only" htmlFor="contact-name">
               {LABELS.NAME}
             </label>
@@ -82,8 +221,24 @@ export const ContactView = ({
               placeholder={CONTACT_CONSTANTS.PLACEHOLDERS.MESSAGE}
             />
 
-            <Button variant="accent" className="self-start" type="submit">
-              {CONTACT_CONSTANTS.SUBMIT_LABEL}
+            {errorMessage && (
+              <div className="border-line bg-panel flex flex-col gap-1.5 border p-2.5 text-[0.75rem] text-amber-300">
+                <span>{errorMessage}</span>
+                <a href={mailtoFallback} className="text-accent underline">
+                  ↗ Doğrudan E-posta Gönder (mailto)
+                </a>
+              </div>
+            )}
+
+            <Button
+              variant="accent"
+              className="self-start"
+              type="submit"
+              disabled={submitting}
+            >
+              {submitting
+                ? CONTACT_CONSTANTS.SENDING_LABEL
+                : CONTACT_CONSTANTS.SUBMIT_LABEL}
             </Button>
           </form>
         )}

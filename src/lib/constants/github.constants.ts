@@ -8,40 +8,47 @@ export interface GithubRepo {
   body: string;
   lang: string;
   stars: string;
+  url: string;
 }
+
+const GITHUB_PROFILE_URL = "https://github.com/SelahattinGngr";
 
 export const GITHUB_CONSTANTS = {
   STATS: [
-    { value: "1,284", label: "CONTRIBUTIONS / YR" },
-    { value: "38", label: "PUBLIC REPOS" },
-    { value: "2.1k", label: "STARS EARNED" },
+    { value: "42", label: "CURSUS LEVEL 11" },
+    { value: "5.5k+", label: "APP DOWNLOADS" },
+    { value: "4.7 ★", label: "STORE RATING" },
   ] as const satisfies readonly GithubStat[],
   REPOS: [
     {
-      name: "fatih/pgdiff",
-      body: "Schema diffing for Postgres, with a plan you can read.",
-      lang: "Rust",
-      stars: "912",
+      name: "SelahattinGngr/denetim-takip",
+      body: "Denetimli serbestlik takip mobil uygulaması (Kotlin, Jetpack Compose, Firebase, AdMob).",
+      lang: "Kotlin",
+      stars: "Live",
+      url: "https://denetimtakip.com.tr",
     },
     {
-      name: "fatih/relaykit",
-      body: "Event handling helpers for Kafka consumers.",
-      lang: "Go",
-      stars: "634",
+      name: "SelahattinGngr/ecommerce-backend",
+      body: "Çok kiracılı e-ticaret backend servisi: JWT, RBAC, Redis, Iyzico/Stripe (Demo aktif).",
+      lang: "Java",
+      stars: "Demo",
+      url: "https://ecom-demo.selahattin.dev",
     },
     {
-      name: "fatih/slobench",
-      body: "SLO dashboards from YAML.",
-      lang: "Go",
-      stars: "371",
+      name: "SelahattinGngr/ft_transcendence",
+      body: "École 42 bitirme projesi: WebSocket tabanlı gerçek zamanlı Pong ve canlı sohbet.",
+      lang: "C++",
+      stars: "42 Final",
+      url: GITHUB_PROFILE_URL,
     },
     {
-      name: "fatih/dotfiles",
-      body: "Neovim, tmux, and a shell that boots fast.",
-      lang: "Lua",
-      stars: "188",
+      name: "SelahattinGngr/video-processing-backend",
+      body: "Spring Boot ile URL üzerinden asenkron video işleme ve streaming servisi.",
+      lang: "Java",
+      stars: "OSS",
+      url: GITHUB_PROFILE_URL,
     },
   ] as const satisfies readonly GithubRepo[],
-  WEEKS_LABEL: "LAST 26 WEEKS",
+  WEEKS_LABEL: "SON 26 HAFTA",
   CONTRIB_CELLS: 182,
 } as const;

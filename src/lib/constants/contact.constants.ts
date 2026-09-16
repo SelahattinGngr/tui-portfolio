@@ -1,23 +1,31 @@
 export const CONTACT_CONSTANTS = {
-  SENT_MESSAGE: "✓ message queued — reply usually within a day",
-  DIRECT_LABEL: "DIRECT",
+  WEB3FORMS_ACCESS_KEY: "1f33a290-0ac4-4d54-9073-ddfd5bc1e2cf",
+  SENT_MESSAGE:
+    "✓ mesajınız başarıyla iletildi — en kısa sürede e-posta ile dönüş yapacağım",
+  SENDING_LABEL: "gönderiliyor...",
+  ERROR_MESSAGE:
+    "Mesaj iletilemedi. Lütfen doğrudan selahattin_gungor53@hotmail.com adresine yazın.",
+  KEY_MISSING_MESSAGE:
+    "Web3Forms Access Key tanımlanmadı. Lütfen web3forms.com üzerinden aldığınız anahtarı contact.constants.ts içine ekleyin.",
+  DIRECT_LABEL: "DOĞRUDAN İLETİŞİM",
   FIELDS: {
-    MAIL: { label: "mail", value: "hello@fatih.dev" },
-    TZ: { label: "tz", value: "Amsterdam · CET" },
+    MAIL: { label: "eposta", value: "selahattin_gungor53@hotmail.com" },
+    TZ: { label: "konum", value: "Rize · Türkiye (UTC+3) · Remote" },
     NOTE: {
-      label: "note",
-      value: "For contract work, mention scope and timeline.",
+      label: "not",
+      value:
+        "İş teklifleri ve backend/ürün projeleri için doğrudan e-posta atabilirsiniz.",
     },
   },
   LABELS: {
-    NAME: "Your name",
-    EMAIL: "Your email address",
-    MESSAGE: "Your message",
+    NAME: "Adınız",
+    EMAIL: "E-posta adresiniz",
+    MESSAGE: "Mesajınız",
   },
   PLACEHOLDERS: {
-    NAME: "name",
-    EMAIL: "email",
-    MESSAGE: "message",
+    NAME: "adınız",
+    EMAIL: "eposta",
+    MESSAGE: "mesajınız",
   },
-  SUBMIT_LABEL: "send ↵",
+  SUBMIT_LABEL: "gönder ↵",
 } as const;

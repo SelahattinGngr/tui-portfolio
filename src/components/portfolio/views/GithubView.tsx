@@ -32,16 +32,30 @@ export const GithubView = () => (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-3">
       {REPOS.map((repo) => (
         <FadeUp key={repo.name} delayMs={repo.delayMs}>
-          <Surface interactive>
-            <div className="mb-1.5">{repo.name}</div>
-            <div className="text-muted mb-2.5 text-[0.78rem] leading-normal text-pretty">
-              {repo.body}
-            </div>
-            <div className="text-muted flex gap-3.5 text-[0.7rem]">
-              <span>{repo.lang}</span>
-              <span>★ {repo.stars}</span>
-            </div>
-          </Surface>
+          <a
+            href={repo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block h-full no-underline"
+          >
+            <Surface interactive className="h-full">
+              <div className="mb-1.5 flex items-center justify-between gap-2">
+                <span className="group-hover:text-accent font-medium transition-colors">
+                  {repo.name}
+                </span>
+                <span className="text-muted group-hover:text-accent text-[0.72rem] transition-colors">
+                  ↗
+                </span>
+              </div>
+              <div className="text-muted mb-2.5 text-[0.78rem] leading-normal text-pretty">
+                {repo.body}
+              </div>
+              <div className="text-muted flex gap-3.5 text-[0.7rem]">
+                <span>{repo.lang}</span>
+                <span>★ {repo.stars}</span>
+              </div>
+            </Surface>
+          </a>
         </FadeUp>
       ))}
     </div>

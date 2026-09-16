@@ -7,15 +7,21 @@ export interface EducationItem {
 
 export const EDUCATION_CONSTANTS: readonly EducationItem[] = [
   {
-    degree: "MSc Computer Science",
-    school: "TU Delft",
-    duration: "2012 — 2014",
-    body: "Thesis on scheduling for heterogeneous compute clusters.",
+    degree: "42 Cursus, Junior Developer (Level 11)",
+    school: "École 42 Kocaeli",
+    duration: "2022 — 2025",
+    body: "Peer-to-peer, proje tabanlı yazılım eğitimi: C, C++, sistem programlama, soket haberleşmesi, Docker ve algoritma tasarımı.",
   },
   {
-    degree: "BSc Software Engineering",
-    school: "Boğaziçi University",
-    duration: "2008 — 2012",
-    body: "Focus on operating systems and compilers.",
+    degree: "Bilgisayar Programcılığı, Önlisans",
+    school: "Anadolu Üniversitesi",
+    duration: "2025 — Halen",
+    body: "Veritabanı sistemleri, veri yapıları ve nesne yönelimli programlama.",
+  },
+  {
+    degree: "Web Tasarımı ve Kodlama, Önlisans",
+    school: "Anadolu Üniversitesi",
+    duration: "2022 — 2025",
+    body: "Web standartları, istemci tarafı programlama ve kullanıcı arayüzü prensipleri.",
   },
 ] as const;

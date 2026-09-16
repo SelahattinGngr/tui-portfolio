@@ -1,16 +1,16 @@
 export const AVAILABILITY_CONSTANTS = {
   OPEN: {
-    TAG: "OPEN_FOR_ROLES",
-    HEADLINE: "STATUS — OPEN",
-    LINE: "Taking one freelance engagement from November 2026.",
+    TAG: "IS_FIRSATLARINA_ACIK",
+    HEADLINE: "DURUM — AÇIK",
+    LINE: "Yeni Backend ve Ürün Geliştirme fırsatlarına açığım.",
     DETAIL:
-      "Best fit: platform or data-infrastructure work, two to four months, remote within European hours. Full-time roles considered for the right team.",
+      "Spring Boot mikroservis mimarileri, veri/önbellek sistemleri veya uçtan uca mobil/web ürün geliştirme projelerinde tam zamanlı (remote) veya kontratlı işler için görüşebiliriz.",
   },
   CLOSED: {
-    TAG: "NOT_AVAILABLE",
-    HEADLINE: "STATUS — CLOSED",
-    LINE: "Not taking new work right now.",
+    TAG: "MEVCUT_DEGIL",
+    HEADLINE: "DURUM — KAPALI",
+    LINE: "Şu an yeni proje kabul edilmiyor.",
     DETAIL:
-      "Full-time at Meridian and happy there. Still glad to talk about interesting problems — run contact.",
+      "Mevcut projeler üzerinde aktif çalışıyorum. Fikir alışverişi veya networking için her zaman iletişim kurabilirsiniz.",
   },
 } as const;

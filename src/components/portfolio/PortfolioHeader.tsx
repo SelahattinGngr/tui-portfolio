@@ -11,11 +11,11 @@ type PortfolioHeaderProperties = {
 };
 
 const META = [
-  { label: "ROLE", value: APP_CONSTANTS.ROLE },
-  { label: "UPTIME", value: APP_CONSTANTS.UPTIME },
-  { label: "LOCATION", value: APP_CONSTANTS.LOCATION },
-  { label: "SHELL", value: APP_CONSTANTS.SHELL },
-  { label: "DEPLOY", value: APP_CONSTANTS.DEPLOY },
+  { label: "ROL", value: APP_CONSTANTS.ROLE },
+  { label: "DENEYİM", value: APP_CONSTANTS.UPTIME },
+  { label: "KONUM", value: APP_CONSTANTS.LOCATION },
+  { label: "KABUK", value: APP_CONSTANTS.SHELL },
+  { label: "YAYIN", value: APP_CONSTANTS.DEPLOY },
 ] as const;
 
 export const PortfolioHeader = ({
@@ -65,10 +65,10 @@ export const PortfolioHeader = ({
       <div className="text-muted ml-auto flex items-center gap-3.5 text-[0.68rem] tracking-widest">
         <span className="flex items-center gap-1.75">
           <StatusDot tone="ok" size="sm" />
-          <span>SESSION ACTIVE</span>
+          <span>OTURUM AKTİF</span>
         </span>
         <Button variant="ghost" onClick={onClear}>
-          clear
+          temizle
         </Button>
       </div>
     </aside>

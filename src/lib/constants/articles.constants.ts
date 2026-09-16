@@ -6,23 +6,18 @@ export interface ArticleItem {
 
 export const ARTICLES_CONSTANTS: readonly ArticleItem[] = [
   {
-    title: "Designing for replay in event-driven systems",
-    publication: "InfoQ",
+    title: "Denetimli Serbestlik Süreçlerinde Mobil Takip Çözümleri",
+    publication: "selahattin.dev",
     date: "2026",
   },
   {
-    title: "What SLOs get wrong about user experience",
-    publication: "Pragmatic Eng.",
+    title: "Spring Boot ve Docker ile Üretime Hazır Mikroservisler",
+    publication: "Medium",
     date: "2025",
   },
   {
-    title: "A practical guide to Kafka consumer semantics",
-    publication: "Confluent",
+    title: "École 42 Metodolojisi ve Peer-to-Peer Yazılım Geliştirme",
+    publication: "selahattin.dev",
     date: "2024",
-  },
-  {
-    title: "Migrating a ledger without losing a cent",
-    publication: "ACM Queue",
-    date: "2023",
   },
 ] as const;

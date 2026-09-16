@@ -20,9 +20,18 @@ export const ResumeView = () => (
             {RESUME_CONSTANTS.FILE_META}
           </div>
         </div>
-        <Button variant="accent" onClick={() => window.print()}>
-          {RESUME_CONSTANTS.DOWNLOAD_LABEL}
-        </Button>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <Button
+            variant="accent"
+            href="/selahattinGungorCv.pdf"
+            target="_blank"
+          >
+            {RESUME_CONSTANTS.DOWNLOAD_LABEL}
+          </Button>
+          <Button variant="ghost" onClick={() => window.print()}>
+            [yazdır]
+          </Button>
+        </div>
       </Surface>
     </FadeUp>
 
