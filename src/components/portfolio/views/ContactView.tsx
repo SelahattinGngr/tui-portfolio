@@ -80,22 +80,20 @@ const sendWeb3FormsMessage = async (
   email: string,
   message: string
 ): Promise<Web3FormsResponse> => {
-  const payload: Record<string, string> = {
-    email,
-    message,
-    name,
-    subject: `Yeni İletişim Mesajı (${name}) — selahattin.dev`,
-    access_key: CONTACT_CONSTANTS.WEB3FORMS_ACCESS_KEY,
-    from_name: "selahattin.dev Portföy",
-  };
+  const formData = new FormData();
+  formData.append("access_key", CONTACT_CONSTANTS.WEB3FORMS_ACCESS_KEY);
+  formData.append("from_name", "selahattin.dev Portföy");
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("message", message);
+  formData.append("subject", `Yeni İletişim Mesajı (${name}) — selahattin.dev`);
 
   const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
+    body: formData,
     headers: {
-      "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(payload),
+    method: "POST",
   });
 
   return (await response.json()) as Web3FormsResponse;
