@@ -9,7 +9,7 @@ export const TIMELINE_CONSTANTS: readonly TimelineItem[] = [
     current: true,
     year: "2026",
     event:
-      "Çay Ocağı Simülasyonu oyununu Steam'de yayınladım; Denetim Takip ile 5.500+ toplam indirmeye ulaştım.",
+      "Kaşif KML B2B kadastro otomasyonunu geliştirip ilk kurumsal satışını yaptım; Çay Ocağı Simülasyonu oyununu Steam'de yayınladım; Denetim Takip ile 5.500+ toplam indirmeye ulaştım.",
   },
   {
     year: "2025",

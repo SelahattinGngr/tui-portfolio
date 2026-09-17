@@ -19,6 +19,25 @@ const GITHUB_URL = "https://github.com/SelahattinGngr";
 export const PROJECTS_CONSTANTS: readonly ProjectItem[] = [
   {
     current: true,
+    title: "Kaşif KML",
+    role: "Kurucu & Lead Engineer",
+    duration: "2026 — Halen · B2B Kurumsal Satış",
+    body: "Tarım kooperatifleri için üretici belgelerini Google Gemini OCR ile sayısallaştıran, TKGM harita servisleri üzerinden toplu KML çıkaran ve üretici bazında arşivleyen kurumsal B2B masaüstü çözümü. Leaflet harita poligonlarının matematiksel iç nokta hesabı ile isabetli tıklanması, checkpoint/resume toleransı, dead-letter ayrıştırması, Firebase uzaktan lisanslama ve TanStack Start web altyapısını içerir.",
+    stack: [
+      "Python",
+      "PySide6",
+      "Playwright",
+      "Google Gemini Vision",
+      "Firebase",
+      "TanStack Start",
+      "React 19",
+      "Tailwind CSS v4",
+    ],
+    tags: ["b2b-saas", "ocr", "browser-automation", "gis", "desktop-app"],
+    links: [{ label: "website", href: "https://kasifkml.com" }],
+  },
+  {
+    current: true,
     title: "Denetim Takip",
     role: "Kurucu & Android Geliştirici",
     duration: "2026 — Halen · 5.500+ Toplam İndirme",

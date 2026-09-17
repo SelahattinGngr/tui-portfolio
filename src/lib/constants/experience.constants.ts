@@ -9,6 +9,13 @@ export interface ExperienceItem {
 export const EXPERIENCE_CONSTANTS: readonly ExperienceItem[] = [
   {
     current: true,
+    role: "Kurucu & Lead Software Engineer",
+    company: "Kaşif KML (kasifkml.com)",
+    duration: "2026 — Halen",
+    body: "Tarım kooperatifleri ve ziraat firmaları için evrak-kadastro darboğazını çözen B2B otomasyon yazılımını sıfırdan mimariledim ve ticarileştirdim (1 kurumsal lisans satışı). PySide6 GUI, Google Gemini Vision tabanlı OCR pipeline, Leaflet harita poligonlarını matematiksel iç nokta hesabı ile tıklayan dayanıklı Playwright otomasyon motoru ve Firebase lisanslama altyapısını geliştirdim.",
+  },
+  {
+    current: true,
     role: "Kurucu & Android Geliştirici",
     company: "Denetim Takip",
     duration: "2026 — Halen",
